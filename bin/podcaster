@@ -1,0 +1,49 @@
+#!/usr/bin/env node
+
+'use strict'
+
+// Register Babel.
+require('babel-polyfill')
+require('babel-register')
+
+const minimist = require('minimist')
+const main = require('../')
+
+const args = minimist(process.argv, {
+  alias: {
+    h: 'help',
+    t: 'token'
+  },
+  boolean: [ 'h' ]
+})
+
+if (args.help || !args.token){
+  console.log(`Usage: podcaster [opts]
+  -h  Help menu
+  -t  Discord bot token (required)`)
+
+  process.exit(0)
+}
+
+require('console-stamp')(console, {
+  pattern: 'HH:MM:ss mmm/dd',
+  colors: {
+    stamp: 'grey'
+  }
+})
+
+let bot = new main.default()
+bot.login(args.token)
+
+process.stdin.resume()
+
+process.on("SIGINT", () => {
+  bot.destroy()
+    .then(() => process.exit(0))
+    .catch((err) => {
+      console.error('Unable to destroy the bot.')
+      console.error(err)
+
+      process.exit(1)
+    })
+})

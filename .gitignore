@@ -1,5 +1,7 @@
 node_modules/
 
+npm-debug.log
+database.json
+
 .DS_Store
 ._*
-npm-debug.log
