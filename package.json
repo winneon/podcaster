@@ -21,7 +21,7 @@
     "babel-polyfill": "^6.16.0",
     "babel-register": "^6.18.0",
     "console-stamp": "^0.2.4",
-    "discord.js": "^10.0.1",
+    "discord.js": "github:hydrabolt/discord.js#indev",
     "minimist": "^1.2.0",
     "node-opus": "^0.2.4"
   }
