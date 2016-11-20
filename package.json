@@ -6,6 +6,13 @@
   "license": "MIT",
   "repository": "winneon/podcaster",
   "main": "lib/bot.js",
+  "babel": {
+    "plugins": [
+      "transform-async-to-generator",
+      "transform-es2015-arrow-functions",
+      "transform-es2015-modules-commonjs"
+    ]
+  },
   "bin": {
     "podcaster": "./bin/podcaster"
   },
