@@ -19,8 +19,8 @@ const args = minimist(process.argv, {
 
 if (args.help || !args.token){
   console.log(`Usage: podcaster [opts]
-  -h  Help menu
-  -t  Discord bot token (required)`)
+  -h        Help menu
+  -t=TOKEN  Discord bot token (required)`)
 
   process.exit(0)
 }
