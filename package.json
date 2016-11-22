@@ -28,6 +28,7 @@
     "console-stamp": "^0.2.4",
     "discord.js": "github:hydrabolt/discord.js#indev",
     "fluent-ffmpeg": "^2.1.0",
+    "github": "^6.1.0",
     "mega": "^0.2.0",
     "minimist": "^1.2.0",
     "node-opus": "^0.2.4",
