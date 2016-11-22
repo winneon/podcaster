@@ -12,7 +12,9 @@ const main = require('../')
 const args = minimist(process.argv, {
   alias: {
     h: 'help',
-    t: 'token'
+    t: 'token',
+    e: 'email',
+    p: 'password'
   },
   boolean: [ 'h' ]
 })
@@ -20,6 +22,8 @@ const args = minimist(process.argv, {
 if (args.help || !args.token){
   console.log(`Usage: podcaster [opts]
   -h        Help menu
+  -e=EMAIL  MEGA email (required)
+  -p=PASWD  MEGA password (required)
   -t=TOKEN  Discord bot token (required)`)
 
   process.exit(0)
@@ -32,7 +36,13 @@ require('console-stamp')(console, {
   }
 })
 
-let bot = new main.default()
+let bot = new main.default({
+  mega: {
+    email: args.email,
+    password: args.password
+  }
+})
+
 bot.login(args.token)
 
 process.stdin.resume()
