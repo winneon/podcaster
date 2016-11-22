@@ -1,6 +1,6 @@
 {
   "name": "podcaster",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A general purpose podcast bot.",
   "author": "Jesse Bryan <jesse@winneon.moe> (https://winneon.moe/)",
   "license": "MIT",
@@ -14,6 +14,9 @@
   },
   "bin": {
     "podcaster": "./bin/podcaster"
+  },
+  "engines": {
+    "node": ">=6.0.0"
   },
   "dependencies": {
     "archiver": "^1.2.0",
