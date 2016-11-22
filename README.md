@@ -1,6 +1,6 @@
 # podcaster
 
-A general purpose podcast bot, running on Discord.
+A general purpose podcast bot, running on Discord. A public bot is not currently available because of storage and performance concerns.
 
 ## Features
 
