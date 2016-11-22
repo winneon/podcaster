@@ -19,7 +19,7 @@ const args = minimist(process.argv, {
   boolean: [ 'h' ]
 })
 
-if (args.help || !args.token){
+if (args.help || !args.token || !args.email || !args.password){
   console.log(`Usage: podcaster [opts]
   -h        Help menu
   -e=EMAIL  MEGA email (required)
@@ -36,6 +36,7 @@ require('console-stamp')(console, {
   }
 })
 
+
 let bot = new main.default({
   mega: {
     email: args.email,
@@ -44,7 +45,6 @@ let bot = new main.default({
 })
 
 bot.login(args.token)
-
 process.stdin.resume()
 
 process.on("SIGINT", () => {
